@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Vœux du Cœur - Binetou Gueye</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gold-gradient: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            --dark-bg: #0f172a;
+            --card-bg: rgba(255, 255, 255, 0.1);
+            --text-light: #ffffff;
+            --text-gold: #ffd700;
+            --shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            padding: 20px;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(102, 126, 234, 0.15) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(246, 211, 101, 0.15) 0%, transparent 20%);
+        }
+        
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            text-align: center;
+            padding: 40px;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        /* Effets de lumière */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gold-gradient);
+            z-index: 2;
+        }
+        
+        .container::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+            z-index: -1;
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Logo Simplon */
+        .logo-container {
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            max-width: 180px;
+            height: auto;
+            filter: drop-shadow(0 5px 15px rgba(255, 255, 255, 0.3));
+            opacity: 0.9;
+        }
+        
+        /* Titre principal */
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 10px 30px rgba(253, 160, 133, 0.3);
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes titleGlow {
+            0% { filter: drop-shadow(0 0 10px rgba(246, 211, 101, 0.5)); }
+            100% { filter: drop-shadow(0 0 30px rgba(253, 160, 133, 0.8)); }
+        }
+        
+        .year {
+            font-size: 5rem;
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 20px 0;
+            display: block;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Message principal */
+        .message-container {
+            background: var(--card-bg);
+            border-radius: 25px;
+            padding: 40px;
+            margin: 40px 0;
+            border-left: 5px solid;
+            border-image: var(--accent-gradient);
+            border-image-slice: 1;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .message-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--accent-gradient);
+            opacity: 0.05;
+            z-index: -1;
+        }
+        
+        .greeting {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8rem;
+            color: var(--text-gold);
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+        
+        .message {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            color: #e2e8f0;
+            margin-bottom: 25px;
+            text-align: left;
+            padding: 0 20px;
+        }
+        
+        .heart {
+            color: #f5576c;
+            animation: heartbeat 1.5s infinite;
+            display: inline-block;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            5% { transform: scale(1.1); }
+            10% { transform: scale(1); }
+            15% { transform: scale(1.1); }
+            20% { transform: scale(1); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Souhaits */
+        .wishes-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .wish-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .wish-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            border-color: rgba(79, 172, 254, 0.3);
+        }
+        
+        .wish-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--secondary-gradient);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        
+        .wish-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .wish-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .wish-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #94a3b8;
+        }
+        
+        /* Signature */
+        .signature-container {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+        
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: var(--text-gold);
+            margin: 20px 0;
+            text-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        .location {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+        
+        /* Animations de particules */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--text-gold);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Bouton de partage */
+        .share-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--secondary-gradient);
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(245, 87, 108, 0.3);
+        }
+        
+        .share-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(245, 87, 108, 0.4);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+            }
+            
+            .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .year {
+                font-size: 4rem;
+            }
+            
+            .greeting {
+                font-size: 2.2rem;
+            }
+            
+            .message {
+                font-size: 1.2rem;
+                padding: 0;
+            }
+            
+            .wishes-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .signature {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 2rem;
+            }
+            
+            .year {
+                font-size: 3rem;
+            }
+            
+            .greeting {
+                font-size: 1.8rem;
+            }
+            
+            .message-container {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <div class="container">
+        <div class="logo-container">
+            <!-- Logo Simplon -->
+            <img src="https://raw.githubusercontent.com/simplonco/simplonco.github.io/master/img/logos/simplon.svg" 
+                 alt="Simplon" 
+                 class="logo"
+                 onerror="this.src='https://simplon.co/images/logo.svg'">
+        </div>
+        
+        <h1 class="main-title">Mes Vœux du Cœur</h1>
+        <span class="year">2025</span>
+        
+        <div class="message-container">
+            <p class="greeting">À ma chère famille, mes amis précieux,<br>et toutes les merveilleuses personnes croisées cette année</p>
+            
+            <div class="message">
+                <p>Cette année 2025 aura été riche en rencontres, en partages et en moments précieux.</p>
+                
+                <p style="margin: 20px 0; text-align: center; font-style: italic;">
+                    Chacun de vous a laissé une empreinte dans mon cœur ❤️
+                </p>
+                
+                <p>À travers les rires partagés, les conversations profondes, les silences complices et les défis surmontés ensemble, vous avez coloré mon année de bonheur et de sens.</p>
+                
+                <p style="margin-top: 25px; font-weight: 500; text-align: center;">
+                    Je vous porte tous dans mon cœur <span class="heart">♥</span>
+                </p>
+            </div>
+        </div>
+        
+        <div class="wishes-container">
+            <div class="wish-card">
+                <div class="wish-icon">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <h3 class="wish-title">Santé Radieuse</h3>
+                <p>Une santé de fer pour profiter pleinement de chaque instant précieux</p>
+            </div>
+            
+            <div class="wish-card">
+                <div class="wish-icon">
+                    <i class="fas fa-laugh-beam"></i>
+                </div>
+                <h3 class="wish-title">Bonheur Infini</h3>
+                <p>Des moments de joie et des sourires qui illuminent vos journées</p>
+            </div>
+            
+            <div class="wish-card">
+                <div class="wish-icon">
+                    <i class="fas fa-peace"></i>
+                </div>
+                <h3 class="wish-title">Paix Intérieure</h3>
+                <p>La sérénité dans l'âme et l'harmonie dans chaque aspect de votre vie</p>
+            </div>
+            
+            <div class="wish-card">
+                <div class="wish-icon">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <h3 class="wish-title">Prospérité</h3>
+                <p>L'abondance sous toutes ses formes pour réaliser vos rêves</p>
+            </div>
+            
+            <div class="wish-card">
+                <div class="wish-icon">
+                    <i class="fas fa-infinity"></i>
+                </div>
+                <h3 class="wish-title">Longue Vie</h3>
+                <p>Une longue vie remplie de moments précieux et d'amour</p>
+            </div>
+            
+            <div class="wish-card">
+                <div class="wish-icon">
+                    <i class="fas fa-hands-helping"></i>
+                </div>
+                <h3 class="wish-title">Accompagnement</h3>
+                <p>Qu' ALLAH LE TOUT PUISSANT nous assiste dans toutes les épreuves!</p>
+            </div>
+        </div>
+        
+        <div class="signature-container">
+            <p class="location">ALHAMDOULLILAH❤️ MASHA' ALLAH</p>
+            <div class="signature">Binetou Gueye</div>
+           
+            <button class="share-button" onclick="shareCard()">
+                <i class="fas fa-share-alt"></i>
+                Partager ces vœux
+            </button>
+        </div>
+    </div>
+
+    <script>
+        console.log("🎉 Confettis automatiques activés !");
+        // Création des particules
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const colors = ['#667eea', '#764ba2', '#f6d365', '#fda085', '#4facfe', '#00f2fe'];
+            
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Taille aléatoire
+                const size = Math.random() * 5 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Position aléatoire
+                particle.style.left = `${Math.random() * 100}%`;
+                
+                // Couleur aléatoire
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.backgroundColor = color;
+                
+                // Animation
+                const duration = Math.random() * 20 + 15;
+                const delay = Math.random() * 5;
+                particle.style.animationDuration = `${duration}s`;
+                particle.style.animationDelay = `${delay}s`;
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Animation des cartes au scroll
+        function animateCards() {
+            const cards = document.querySelectorAll('.wish-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.8s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 300 + (index * 150));
+            });
+        }
+        
+        // Partage de la carte
+        function shareCard() {
+            const shareText = "🌟 Mes vœux du cœur pour vous ! 🌟\n\n" +
+                            "Je vous souhaite santé, bonheur, paix et prospérité pour cette nouvelle année.\n\n" +
+                            "Merci d'illuminer ma vie de votre présence ❤️\n\n" +
+                            "Avec tout mon amour,\nBinetou Gueye\n\n" +
+                            "#MesVoeux2025 #BinetouGueye";
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Mes Vœux 2025 - Binetou Gueye',
+                    text: shareText,
+                    url: window.location.href
+                })
+                .then(() => console.log('Partage réussi'))
+                .catch((error) => console.log('Erreur de partage:', error));
+            } else {
+                // Fallback pour desktop
+                const tempInput = document.createElement('input');
+                document.body.appendChild(tempInput);
+                tempInput.value = shareText + '\n\n' + window.location.href;
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+                
+                // Message de confirmation
+                const button = document.querySelector('.share-button');
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check"></i> Texte copié !';
+                button.style.background = 'linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%)';
+                
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.style.background = 'var(--secondary-gradient)';
+                }, 2000);
+            }
+        }
+        
+        // Animation du titre
+        function animateTitle() {
+            const title = document.querySelector('.main-title');
+            let hue = 0;
+            
+            setInterval(() => {
+                hue = (hue + 1) % 360;
+                title.style.background = `linear-gradient(135deg, hsl(${hue}, 100%, 65%) 0%, hsl(${(hue + 40) % 360}, 100%, 65%) 100%)`;
+                title.style.webkitBackgroundClip = 'text';
+            }, 100);
+        }
+        
+        // Initialisation
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            animateCards();
+            animateTitle();
+            
+            // Message de bienvenue
+            console.log('%c✨ CARTE DE VŒUX - BINETOU GUEYE ✨', 'color: #667eea; font-size: 16px; font-weight: bold;');
+            console.log('%cAvec tout mon amour pour ma famille et mes amis ❤️', 'color: #fda085; font-size: 14px;');
+            
+            // Effet d'apparition progressive
+            const elements = document.querySelectorAll('.container > *');
+            elements.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    el.style.transition = 'all 0.8s ease';
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+        
+        // Effet de confetti automatique ET au clic
+        function startAutoConfetti() {
+            // Lance des confettis toutes les 3 secondes
+            setInterval(() => {
+                // Position aléatoire dans la fenêtre
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * window.innerHeight;
+                createConfetti(x, y);
+            }, 3000);
+        }
+
+        // Démarrer l'animation automatique
+        startAutoConfetti();
+
+        // Garder aussi l'interaction au clic
+        document.addEventListener('click', function(e) {
+            createConfetti(e.clientX, e.clientY);
+        });
+        
+        // Fonction pour créer un confetti
+        function createConfetti(x, y) {
+            const colors = ['#667eea', '#764ba2', '#f6d365', '#fda085', '#4facfe', '#00f2fe', '#f093fb', '#f5576c'];
+            
+            for (let i = 0; i < 12; i++) {
+                const confetti = document.createElement('div');
+                confetti.style.position = 'fixed';
+                confetti.style.left = `${x}px`;
+                confetti.style.top = `${y}px`;
+                confetti.style.width = '8px';
+                confetti.style.height = '8px';
+                confetti.style.borderRadius = '50%';
+                confetti.style.zIndex = '9999';
+                confetti.style.pointerEvents = 'none';
+                
+                // Couleur aléatoire
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.backgroundColor = color;
+                
+                // Animation
+                const angle = Math.random() * Math.PI * 2;
+                const velocity = 10 + Math.random() * 10;
+                const vx = Math.cos(angle) * velocity;
+                let vy = Math.sin(angle) * velocity;
+                
+                let posX = x;
+                let posY = y;
+                const gravity = 0.2;
+                
+                function animate() {
+                    posX += vx;
+                    posY += vy;
+                    vy += gravity;
+                    
+                    confetti.style.left = `${posX}px`;
+                    confetti.style.top = `${posY}px`;
+                    confetti.style.transform = `rotate(${posX + posY}deg)`;
+                    
+                    const opacity = 1 - (posY - y) / 300;
+                    confetti.style.opacity = Math.max(0, opacity);
+                    
+                    if (posY < window.innerHeight + 100) {
+                        requestAnimationFrame(animate);
+                    } else {
+                        confetti.remove();
+                    }
+                }
+                
+                document.body.appendChild(confetti);
+                requestAnimationFrame(animate);
+            }
+        }
+
+        // Lancer des confettis automatiquement toutes les 3 secondes
+        function startAutoConfetti() {
+            setInterval(() => {
+                // Position aléatoire
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * window.innerHeight;
+                createConfetti(x, y);
+            }, 3000);
+        }
+
+        // Démarrer l'animation automatique
+        startAutoConfetti();
+
+        // Garder l'interaction au clic
+        document.addEventListener('click', function(e) {
+            createConfetti(e.clientX, e.clientY);
+        });
+    </script>
+</body>
+</html>
